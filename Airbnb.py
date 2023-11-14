@@ -6,13 +6,13 @@ import plotly.express as px
 
 @st.cache_data(ttl=600)
 def load_data():
-    username = "vignesh0907rao"
-    password = "123qaz321$"
-    cluster_url = "cluster0.01ouamf.mongodb.net/"
+    username = "Enter your username"
+    password = "Enter your password"
+    cluster_url = "Enter your URL"
     database_name = "sample_airbnb"
     collection_name = "listAndReviews"
 
-    client = MongoClient(f"mongodb+srv://vignesh0907rao:123Qaz321$@cluster0.01ouamf.mongodb.net/sample_airbnb?ssl=true&ssl_cert_reqs=CERT_NONE")
+    client = MongoClient(f"mongodb+srv://username:password@cluster url/sample_airbnb?ssl=true&ssl_cert_reqs=CERT_NONE")
     db = client['sample_airbnb']
     collection = db['listingsAndReviews']
 
@@ -165,7 +165,7 @@ def main():
             if explore_data_btn:
                 display_map_on_streamlit(df, selected_neighbourhood, selected_property_type)
 
-            price_analysis(df, selected_neighbourhood, selected_property_type)  # Corrected variable names passed to price_analysis function
+            price_analysis(df, selected_neighbourhood, selected_property_type)  
 
 if __name__ == "__main__":
     main()
